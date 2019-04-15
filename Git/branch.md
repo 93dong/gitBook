@@ -21,9 +21,23 @@
 >   git merge [ branch-name(source) ]
 - 如若有冲突时，Git会尝试自动合并，合并不成功时，需手动合并，合并完成之后使用 `git add` 将冲突文件状态变更为已解决，之后可 `git commit` 提交合并结果
 
+## 删除远程分支
+>   git push [ remote-name ] --delete [ branch-name ]
+
+## 变基
+- rebase 命令将提交到某一个分支的所有数据都移至另一个分支上
+>   git rebase [ rebase-target-branch-name ] [ source-branch-name ]  source-branch-name变基在rebase-target-branch-name分支上，使得rebase-target-branch-name分支提交记录直接前进
 
 ## 命令
 - git branch 查看分支列表
 - git branch -v 查看每个分支最后一次提交
+- git branch -vv 查看所有跟踪分支
+- git branch -b [ branch-name ] [ remote-branch-name ] 新建分支并设置远程跟踪分支
+- git branch -u [ remote-branch-name] 修改远程跟踪分支
 - git branch --merge 查看哪些分支已经合并到当前分支
 - git branch --no-merge 查看哪些分支未合并到当前分支
+- git branch -d [ branch-name ] 删除分支
+- git branch -D [ branch-name ] 强制删除分支
+- git fetch 从服务器上抓取本地没有的数据，不会修改工作目录中的内容，只会获取数据让你合并。
+- git pull = git fetch + git merge
+
