@@ -10,3 +10,10 @@
     * [打标签](Git/tag.md)
     * [别名](Git/alias.md)
     * [分支](Git/branch.md)
+* TypeScript
+    * [基础类型](TypeScript/baseType.md)
+    * [接口](TypeScript/interface.md)
+    * [类](TypeScript/class.md)
+    * [函数](TypeScript/function.md)
+    * [泛型](TypeScript/generic.md)
+    * [枚举](TypeScript/enum.md)
