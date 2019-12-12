@@ -5,11 +5,15 @@
     * [Mobx](StateManage/Mobx/mobx.md)
         * [observable](StateManage/Mobx/mobx-observable.md)
     * [Redux](StateManage/Redux/redux.md)
+    * [ReactRedux](StateManage/ReactRedux/ReactRudex.md)
+        * [Provider](StateManage/ReactRedux/Provider.md)
+        * [Connect](StateManage/ReactRedux/Connect.md)
 * Git
     * [远程仓库](Git/remote.md)
     * [打标签](Git/tag.md)
     * [别名](Git/alias.md)
     * [分支](Git/branch.md)
+    * [Hooks](Git/hooks.md)
 * TypeScript
     * [基础类型](TypeScript/baseType.md)
     * [接口](TypeScript/interface.md)
