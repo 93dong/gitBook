@@ -24,6 +24,9 @@
 * Http & Https
     * [区别](HTTP&HTTPS/different.md)
 * Css
+* Server
+    * [linux命令记录](Server/linux/index.md)
+    * [nginx](Server/nginx/index.md)
 * JavaScript
 * [DNS](DNS/dns.md)
 * [AJAX](Ajax/ajax.md)
