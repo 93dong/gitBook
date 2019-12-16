@@ -1,21 +1,39 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const url = require('url');
 
-const server = http.createServer(function(){}).listen(8888,function(){
-    console.log('监听：8888');
+const server = http.createServer(function(){}).listen(80,function(){
+    console.log('正在监听：80端口');
 });
 server.on('request', function (request, response) {
-    const url = path.resolve(request.url);
+    var requestUrl = request.url;
+    var pathName =  decodeURI(url.parse(requestUrl).pathname);
+    var filePath = path.resolve(__dirname + pathName);
     response.writeHead(200, {});
-    fs.readFile(`/Users/miao/self/gitBook/_book${url}`, 'utf-8', function (err, data) {
-        console.log(url);
+    fs.stat(filePath,(err,stats)=>{
         if (err) {
-            console.log(err);
-            console.log(request.url);
+            response.writeHead(404, { "content-type": "text/html" });
+            response.end("<h1>404 Not Found</h1>");
+            return;
         }
-        response.end(data);
-
+        if(stats.isFile()){
+            fs.readFile(filePath,(err,file)=>{
+                if(err){
+                    console.log(err);
+                }
+                response.end(file);
+            });
+            return;
+        }
+        if(stats.isDirectory()){
+            fs.readFile(`${filePath}/index.html`,(err,file)=>{
+                if(err){
+                    console.log(err);
+                }
+                response.end(file);
+            });
+        }
     });
 });
 
